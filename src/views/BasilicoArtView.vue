@@ -12,5 +12,9 @@ import BuildingWrapper from '@/components/BuildingWrapper.vue';
 .baseilico-art-wrapper {
   background: linear-gradient(to bottom, #82addb 0%,#ebb2b1 100%);
   min-height: 100vh;
+  padding-top: 50px;
+  &.night {
+    background: linear-gradient(to bottom, #020111 60%, #20202c 100%);
+  }
 }
 </style>

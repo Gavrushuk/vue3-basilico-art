@@ -1,69 +1,77 @@
 <script lang="ts" setup>
-
+import DoorWrapper from './DoorWrapper.vue';
+import TheDoor from './TheDoor.vue';
+import TheWindow from './TheWindow.vue';
+import WindowWrapper from './WindowWrapper.vue';
+import CentralDoor from './CentralDoor.vue';
+import SecondRoof from './SecondRoof.vue';
+import TheBallcony from './TheBallcony.vue';
+import MainRoof from './MainRoof.vue';
 </script>
 
 <template>
+  <div class="roof-wrapper">
+    <MainRoof />
+  </div>
+
   <div class="building-wrapper">
     <div class="windows-row">
-      <div class="window-wrapper">
-        <div class="window-wrapper-top-part"></div>
-        <div class="window-wrapper-window">
-          <div class="window-wrapper-window-left-side opened"></div>
-          <div class="window-wrapper-window-right-side opened"></div>
-        </div>
-        <div class="window-wrapper-bottom-part"></div>
-      </div>
+      <WindowWrapper type="square-top-part">
+        <TheWindow />
+      </WindowWrapper>
 
-      <div class="window-wrapper">
-        <div class="window-wrapper-top-part"></div>
-        <div class="window-wrapper-window">
-          <div class="window-wrapper-window-left-side opened"></div>
-          <div class="window-wrapper-window-right-side"></div>
-        </div>
-        <div class="window-wrapper-bottom-part"></div>
-      </div>
+      <WindowWrapper type="square-top-part">
+        <TheWindow />
+      </WindowWrapper>
 
-      <div class="window-wrapper">
-        <div class="window-wrapper-top-part"></div>
-        <div class="window-wrapper-window">
-          <div class="window-wrapper-window-left-side"></div>
-          <div class="window-wrapper-window-right-side"></div>
-        </div>
-        <div class="window-wrapper-bottom-part"></div>
-      </div>
+      <WindowWrapper type="square-top-part">
+        <TheWindow />
+      </WindowWrapper>
     </div>
 
     <div class="windows-and-dor-row">
-      <div class="window-rounded-wrapper">
-        <div class="window-rounded-wrapper-top-part"></div>
-        <div class="window-wrapper-window">
-          <div class="window-wrapper-window-left-side"></div>
-          <div class="window-wrapper-window-right-side opened"></div>
-        </div>
-        <div class="window-rounded-wrapper-bottom-part"></div>
+      <WindowWrapper type="rounded-top-part">
+        <TheWindow />
+      </WindowWrapper>
+
+      <DoorWrapper>
+        <TheDoor />
+      </DoorWrapper>
+
+      <WindowWrapper type="rounded-top-part">
+        <TheWindow />
+      </WindowWrapper>
+    </div>
+
+    <div class="ballcony-wrapper">
+      <TheBallcony />
+    </div>
+
+    <div class="windows-second-row">
+      <WindowWrapper type="without-top-part">
+        <TheWindow />
+      </WindowWrapper>
+
+      <WindowWrapper type="without-top-part">
+        <TheWindow />
+      </WindowWrapper>
+
+      <WindowWrapper type="without-top-part">
+        <TheWindow />
+      </WindowWrapper>
+    </div>
+
+    <div class="second-roof-wrapper">
+      <SecondRoof />
+    </div>
+
+    <div class="double-windows-and-dor-row">
+      <div class="double-window">
+        <TheWindow />
+        <TheWindow />
       </div>
 
-      <div class="door-rounded-wrapper">
-        <div class="door-rounded-wrapper-top-part">
-          <div class="door-rounded-wrapper-top-part-glass"></div>
-        </div>
-        <div class="door-rounded-wrapper-door">
-          <div class="door-rounded-wrapper-door-sides">
-            <div class="door-rounded-wrapper-door-left-side"></div>
-            <div class="door-rounded-wrapper-door-right-side"></div>
-          </div>
-        </div>
-        <div class="door-rounded-wrapper-bottom-part"></div>
-      </div>
-
-      <div class="window-rounded-wrapper">
-        <div class="window-rounded-wrapper-top-part"></div>
-        <div class="window-wrapper-window">
-          <div class="window-wrapper-window-left-side opened"></div>
-          <div class="window-wrapper-window-right-side opened"></div>
-        </div>
-        <div class="window-rounded-wrapper-bottom-part"></div>
-      </div>
+      <CentralDoor />
     </div>
   </div>
 </template>
@@ -71,35 +79,76 @@
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-}
-
 .building-wrapper {
   background-color: #b8aea4;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px;
-  max-width: 1000px;
+  width: 1400px;
   margin: 0 auto;
   .windows-row {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 60px;
+    margin-top: 150px;
+  }
+  .windows-second-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-top: 200px;
   }
   .windows-and-dor-row {
     display: flex;
     justify-content: center;
     align-items: start;
     gap: 80px;
-    margin-top: 100px;
+    margin-top: 200px;
+    z-index: 0;
+  }
+  .ballcony-wrapper {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+  }
+  .second-roof-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: -35px;
+    z-index: 1;
+  }
+  .double-windows-and-dor-row {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 167px;
+    z-index: 0;
+    .double-window {
+      position: relative;
+      display: flex;
+      width: 350px;
+      height: 230px;
+      :deep(.window) {
+        left: 20px;
+        right: 20px;
+        &:first-child {
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 50%;
+        }
+        &:last-child {
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: calc(50% - 10px);
+        }
+      }
+    }
   }
 }
 </style>

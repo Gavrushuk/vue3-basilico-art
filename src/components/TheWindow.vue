@@ -4,12 +4,20 @@
 
 <template>
   <div class="window">
-    <div class="window-left-side opened"></div>
-    <div class="window-right-side opened"></div>
+    <div class="window__side-left"></div>
+    <div class="window__side-right opened"></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/variables.scss";
+
+.night {
+  .window {
+    background: radial-gradient(circle, rgba(255,255,0,1) 0%, rgba(212,175,55,1) 100%);
+  }
+}
+
 .window {
   position: absolute;
   background-color: $windows-bg;
@@ -20,8 +28,9 @@
   border: 10px solid $windows-borders;
   z-index: 1;
   box-shadow: inset 0px 0px 5px lightgray;
+  overflow: hidden;
+  // hided line between sides
   &:after {
-    content: "";
     position: absolute;
     background-color: $windows-borders;
     width: 10px;
@@ -29,15 +38,16 @@
     left: 50%;
     transform: translatex(-50%);
   }
-  .window-left-side {
+  .window__side-left {
     position: absolute;
     top: -10px;
-    left: -10px;
-    height: 100%;
-    width: 57.5px;
+    bottom: -10px;
+    left: -20px;
+    right: calc(50% - 5px);
     border: 10px solid $windows-borders;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
+    transition: transform 0.5s;
     cursor: pointer;
     &:after {
       content: "";
@@ -46,41 +56,35 @@
       left: 0;
       right: 0;
       border-bottom: 10px solid $windows-borders;
-      height: 50px;
+      height: 30%;
     }
     &.opened,
     &:active {
-      top: 5px;
-      left: -28px;
-      height: 143px;
-      width: 85px;
-      transform: perspective(300px) rotateY(60deg);
-      &:after {
-        height: 39px;
-      }
+      left: -55px;
+      transform: perspective(190px) rotateY(40deg);
     }
     &.opened {
       &:active {
         top: -10px;
-        left: -10px;
-        height: 100%;
-        width: 57.5px;
+        bottom: -10px;
+        left: -20px;
         transform: none;
         &:after {
-          height: 50px;
+          height: 30%;
         }
       }
     }
   }
-  .window-right-side {
+  .window__side-right {
     position: absolute;
     top: -10px;
-    right: -10px;
-    height: 100%;
-    width: 57px;
+    bottom: -10px;
+    left: calc(50% - 5px);
+    right: -20px;
     border: 10px solid $windows-borders;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
+    transition: transform 0.5s;
     cursor: pointer;
     &:after {
       content: "";
@@ -89,28 +93,21 @@
       left: 0;
       right: 0;
       border-bottom: 10px solid $windows-borders;
-      height: 50px;
+      height: 30%;
     }
     &.opened,
     &:active {
-      top: 5px;
-      right: -28px;
-      height: 143px;
-      width: 80px;
-      transform: perspective(300px) rotateY(-60deg);
-      &:after {
-        height: 39px;
-      }
+      right: -55px;
+      transform: perspective(190px) rotateY(-40deg);
     }
     &.opened {
       &:active {
         top: -10px;
-        right: -10px;
-        height: 100%;
-        width: 57px;
+        bottom: -10px;
+        right: -20px;
         transform: none;
         &:after {
-          height: 50px;
+          height: 30%;
         }
       }
     }

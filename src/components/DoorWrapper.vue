@@ -15,6 +15,16 @@
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
 
+.night {
+  .door-wrapper {
+    .door-wrapper__part-top {
+      .door-wrapper__part-top__glass {
+        background-color: rgba(212,175,55,0.7);
+      }
+    }
+  }
+}
+
 .door-wrapper {
   position: relative;
   .door-wrapper__part-top {

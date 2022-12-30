@@ -4,15 +4,19 @@
 
 <template>
   <div class="door">
-    <div class="door__sides">
-      <div class="door__side-left"></div>
-      <div class="door__side-right"></div>
-    </div>
+    <div class="door__side-left"></div>
+    <div class="door__side-right opened"></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
+
+.night {
+  .door {
+    background: radial-gradient(circle, rgba(255,255,0,1) 0%, rgba(212,175,55,1) 100%);
+  }
+}
 
 .door {
   position: absolute;
@@ -24,55 +28,54 @@
   border: 10px solid $windows-borders;
   z-index: 1;
   box-shadow: inset 0px 0px 5px lightgray;
-  .door__sides {
+  overflow: hidden;
+  .door__side-left {
     position: absolute;
-    background-color: $windows-bg;
-    top: 22px;
-    left: -14px;
-    right: -10px;
-    bottom: 23px;
+    top: -10px;
+    bottom: -10px;
+    left: -20px;
+    right: calc(50% - 5px);
     border: 10px solid $windows-borders;
-    z-index: 1;
-    box-shadow: inset 0px 0px 5px lightgrey;
-    transform: perspective(300px) rotateY(36deg);
-    .door__side-left {
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      height: 100%;
-      width: 57.5px;
-      border: 10px solid $windows-borders;
-      background-color: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(5px);
-      cursor: pointer;
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        border-bottom: 10px solid $windows-borders;
-        height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: transform 0.5s;
+    cursor: pointer;
+    &.opened,
+    &:active {
+      left: -55px;
+      transform: perspective(250px) rotateY(40deg);
+    }
+    &.opened {
+      &:active {
+        top: -10px;
+        bottom: -10px;
+        left: -20px;
+        transform: none;
       }
     }
-    .door__side-right {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      height: 100%;
-      width: 57px;
-      border: 10px solid $windows-borders;
-      background-color: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(5px);
-      cursor: pointer;
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        border-bottom: 10px solid $windows-borders;
-        height: 50px;
+  }
+  .door__side-right {
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: calc(50% - 5px);
+    right: -20px;
+    border: 10px solid $windows-borders;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: transform 0.5s;
+    cursor: pointer;
+    &.opened,
+    &:active {
+      right: -55px;
+      transform: perspective(250px) rotateY(-40deg);
+    }
+    &.opened {
+      &:active {
+        top: -10px;
+        bottom: -10px;
+        right: -20px;
+        transform: none;
       }
     }
   }
