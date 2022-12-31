@@ -1,11 +1,32 @@
 <script lang="ts" setup>
+import { ref } from 'vue';
 
+const props = defineProps<{
+  isOpenedLeftSideDefault: boolean,
+  isOpenedRightSideDefault: boolean
+}>();
+
+const isOpenedLeftSide = ref(props.isOpenedLeftSideDefault);
+const isOpenedRightSide = ref(props.isOpenedRightSideDefault);
 </script>
 
 <template>
   <div class="window">
-    <div class="window__side-left"></div>
-    <div class="window__side-right opened"></div>
+    <div
+      @click="isOpenedLeftSide = !isOpenedLeftSide"
+      class="window__side-left"
+      :class="{
+        opened: isOpenedLeftSide
+      }"
+    >
+    </div>
+    <div
+      @click="isOpenedRightSide = !isOpenedRightSide"
+      class="window__side-right"
+      :class="{
+        opened: isOpenedRightSide
+      }"
+    ></div>
   </div>
 </template>
 
@@ -14,7 +35,7 @@
 
 .night {
   .window {
-    background: radial-gradient(circle, rgba(255,255,0,1) 0%, rgba(212,175,55,1) 100%);
+    background: radial-gradient(circle, rgba(255, 255, 0, 1) 0%, rgba(212, 175, 55, 1) 100%);
   }
 }
 
@@ -29,6 +50,7 @@
   z-index: 1;
   box-shadow: inset 0px 0px 5px lightgray;
   overflow: hidden;
+
   // hided line between sides
   &:after {
     position: absolute;
@@ -38,6 +60,7 @@
     left: 50%;
     transform: translatex(-50%);
   }
+
   .window__side-left {
     position: absolute;
     top: -10px;
@@ -49,6 +72,7 @@
     backdrop-filter: blur(5px);
     transition: transform 0.5s;
     cursor: pointer;
+
     &:after {
       content: "";
       position: absolute;
@@ -58,23 +82,13 @@
       border-bottom: 10px solid $windows-borders;
       height: 30%;
     }
-    &.opened,
-    &:active {
+
+    &.opened{
       left: -55px;
       transform: perspective(190px) rotateY(40deg);
     }
-    &.opened {
-      &:active {
-        top: -10px;
-        bottom: -10px;
-        left: -20px;
-        transform: none;
-        &:after {
-          height: 30%;
-        }
-      }
-    }
   }
+
   .window__side-right {
     position: absolute;
     top: -10px;
@@ -86,6 +100,7 @@
     backdrop-filter: blur(5px);
     transition: transform 0.5s;
     cursor: pointer;
+
     &:after {
       content: "";
       position: absolute;
@@ -95,21 +110,10 @@
       border-bottom: 10px solid $windows-borders;
       height: 30%;
     }
-    &.opened,
-    &:active {
+
+    &.opened {
       right: -55px;
       transform: perspective(190px) rotateY(-40deg);
-    }
-    &.opened {
-      &:active {
-        top: -10px;
-        bottom: -10px;
-        right: -20px;
-        transform: none;
-        &:after {
-          height: 30%;
-        }
-      }
     }
   }
 }

@@ -114,6 +114,23 @@ defineProps<{
       width: 180px;
       height: 230px;
       margin-top: -2px;
+      &:before,
+      &:after {
+        content: '';
+        background-color: #ffffff;
+        position: absolute;
+        top: 100%;
+        width: 20px;
+        height: 230px;
+        border: 2px solid $stone-border;
+        border-top: none;
+      }
+      &:before {
+        left: -2px;
+      }
+      &:after {
+        right: -2px;
+      }
     }
   }
 

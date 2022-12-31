@@ -38,12 +38,12 @@
 .ballcony {
   position: relative;
   width: 1100px;
-  margin-top: -149px;
+  margin-top: -199px;
   .ballcony__side-left,
   .ballcony__side-right,
   .ballcony__center {
     display: flex;
-    height: 200px;
+    height: 250px;
     border: 2px solid #000000;
     &:after {
       content: '';
@@ -126,7 +126,7 @@
       margin-top: -4px;
     }
     .ballcony__floor__bottom {
-      background-color: #996f5f;
+      background-color: #a24c31;
       width: 100%;
       height: 25px;
       margin-top: 2px;

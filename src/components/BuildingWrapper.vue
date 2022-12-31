@@ -7,6 +7,8 @@ import CentralDoor from './CentralDoor.vue';
 import SecondRoof from './SecondRoof.vue';
 import TheBallcony from './TheBallcony.vue';
 import MainRoof from './MainRoof.vue';
+import SideStones from './SideStones.vue';
+import SidePillar from './SidePillar.vue';
 </script>
 
 <template>
@@ -15,31 +17,59 @@ import MainRoof from './MainRoof.vue';
   </div>
 
   <div class="building-wrapper">
+    <div class="sides-stones">
+      <SideStones side="left" />
+      <SideStones side="right" />
+    </div>
+
+    <div class="sides-pillars">
+      <SidePillar />
+      <SidePillar />
+    </div>
+
     <div class="windows-row">
       <WindowWrapper type="square-top-part">
-        <TheWindow />
+        <TheWindow
+          :isOpenedLeftSideDefault="true"
+          :isOpenedRightSideDefault="false"
+        />
       </WindowWrapper>
 
       <WindowWrapper type="square-top-part">
-        <TheWindow />
+        <TheWindow
+          :isOpenedLeftSideDefault="true"
+          :isOpenedRightSideDefault="false"
+        />
       </WindowWrapper>
 
       <WindowWrapper type="square-top-part">
-        <TheWindow />
+        <TheWindow
+          :isOpenedLeftSideDefault="true"
+          :isOpenedRightSideDefault="false"
+        />
       </WindowWrapper>
     </div>
 
     <div class="windows-and-dor-row">
       <WindowWrapper type="rounded-top-part">
-        <TheWindow />
+        <TheWindow
+          :isOpenedLeftSideDefault="true"
+          :isOpenedRightSideDefault="false"
+        />
       </WindowWrapper>
 
       <DoorWrapper>
-        <TheDoor />
+        <TheDoor
+          :isOpenedLeftSideDefault="true"
+          :isOpenedRightSideDefault="false"
+        />
       </DoorWrapper>
 
       <WindowWrapper type="rounded-top-part">
-        <TheWindow />
+        <TheWindow
+          :isOpenedLeftSideDefault="true"
+          :isOpenedRightSideDefault="false"
+        />
       </WindowWrapper>
     </div>
 
@@ -49,15 +79,24 @@ import MainRoof from './MainRoof.vue';
 
     <div class="windows-second-row">
       <WindowWrapper type="without-top-part">
-        <TheWindow />
+        <TheWindow
+          :isOpenedLeftSideDefault="true"
+          :isOpenedRightSideDefault="false"
+        />
       </WindowWrapper>
 
       <WindowWrapper type="without-top-part">
-        <TheWindow />
+        <TheWindow
+          :isOpenedLeftSideDefault="true"
+          :isOpenedRightSideDefault="false"
+        />
       </WindowWrapper>
 
       <WindowWrapper type="without-top-part">
-        <TheWindow />
+        <TheWindow
+          :isOpenedLeftSideDefault="true"
+          :isOpenedRightSideDefault="false"
+        />
       </WindowWrapper>
     </div>
 
@@ -67,8 +106,14 @@ import MainRoof from './MainRoof.vue';
 
     <div class="double-windows-and-dor-row">
       <div class="double-window">
-        <TheWindow />
-        <TheWindow />
+        <TheWindow
+          :isOpenedLeftSideDefault="true"
+          :isOpenedRightSideDefault="false"
+        />
+        <TheWindow
+          :isOpenedLeftSideDefault="true"
+          :isOpenedRightSideDefault="false"
+        />
       </div>
 
       <CentralDoor />
@@ -80,13 +125,51 @@ import MainRoof from './MainRoof.vue';
 @import "@/assets/variables.scss";
 
 .building-wrapper {
-  background-color: #b8aea4;
+  position: relative;
+  background-color: $house-bg;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px;
   width: 1400px;
   margin: 0 auto;
+  .sides-stones {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .side-stones {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      &:first-child {
+        left: 0;
+      }
+      &:last-child {
+        right: 0;
+      }
+    }
+  }
+  .sides-pillars {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    .side-pillar {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      &:first-child {
+        left: 150px;
+      }
+      &:last-child {
+        right: 150px;
+      }
+    }
+  }
   .windows-row {
     display: flex;
     justify-content: center;

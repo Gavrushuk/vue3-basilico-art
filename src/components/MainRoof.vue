@@ -4,7 +4,7 @@
 
 <template>
   <div class="main-roof">
-    <div v-for="(vLine, i) of Array(18)" :key="i">
+    <div v-for="(vLine, i) of Array(20)" :key="i">
       <div v-for="(tile, j) of Array(10)" :key="j">
         <div></div>
         <div></div>
@@ -21,7 +21,7 @@
   position: relative;
   display: flex;
   height: 300px;
-  width: 1165px;
+  width: 1205px;
   transform: perspective(200px) rotateX(13deg);
   margin: 0 auto;
   border-bottom: 0;

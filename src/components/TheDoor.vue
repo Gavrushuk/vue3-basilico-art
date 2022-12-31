@@ -1,11 +1,32 @@
 <script lang="ts" setup>
+import { ref } from 'vue';
 
+const props = defineProps<{
+  isOpenedLeftSideDefault: boolean,
+  isOpenedRightSideDefault: boolean
+}>();
+
+const isOpenedLeftSide = ref(props.isOpenedLeftSideDefault);
+const isOpenedRightSide = ref(props.isOpenedRightSideDefault);
 </script>
 
 <template>
   <div class="door">
-    <div class="door__side-left"></div>
-    <div class="door__side-right opened"></div>
+    <div
+      @click="isOpenedLeftSide = !isOpenedLeftSide"
+      class="door__side-left"
+      :class="{
+        opened: isOpenedLeftSide
+      }"
+    >
+    </div>
+    <div
+      @click="isOpenedRightSide = !isOpenedRightSide"
+      class="door__side-right"
+      :class="{
+        opened: isOpenedRightSide
+      }"
+    ></div>
   </div>
 </template>
 
