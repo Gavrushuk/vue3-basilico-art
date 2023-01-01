@@ -26,11 +26,12 @@ const dayTimeState: Ref<'sun' | 'moon'> = ref('sun');
 <style lang="scss" scoped>
 .baseilico-art-wrapper {
   position: relative;
-  background: linear-gradient(to bottom, #82addb 0%,#ebb2b1 100%);
+  background-color: #82addb;
   min-height: 100vh;
   padding-top: 50px;
+  transition: 0.5s;
   &.night {
-    background: linear-gradient(to bottom, #020111 60%, #20202c 100%);
+    background-color: #020111;
   }
 }
 </style>

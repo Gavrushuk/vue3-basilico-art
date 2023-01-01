@@ -18,6 +18,15 @@ defineProps<{
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
 
+.night {
+  .window-wrapper {
+    .window-wrapper__part-top,
+    .window-wrapper__part-bottom {
+      filter: brightness(0.75);
+    }
+  }
+}
+
 .window-wrapper {
   position: relative;
 
@@ -28,6 +37,7 @@ defineProps<{
       border: 2px solid $stone-border;
       width: 200px;
       height: 50px;
+      transition: filter 0.5s;
       &:after {
         content: "";
         background-color: #ffffff;
@@ -52,6 +62,7 @@ defineProps<{
       height: 180px;
       margin-top: -2px;
       transform: translatex(10px);
+      transition: filter 0.5s;
       &:after {
         content: "";
         position: absolute;
@@ -96,7 +107,7 @@ defineProps<{
         background-color: $house-bg;
         border-radius: 50% 50% 0 0 / 100% 100% 0 0;
         border: 2px solid $stone-border;
-        height: 30px;
+        height: 25px;
       }
     }
 
@@ -113,7 +124,7 @@ defineProps<{
       border-top: 0;
       width: 180px;
       height: 230px;
-      margin-top: -2px;
+      margin-top: -3px;
       &:before,
       &:after {
         content: '';

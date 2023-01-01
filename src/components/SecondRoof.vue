@@ -17,9 +17,16 @@
 @import "@/assets/variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Andika:wght@700&display=swap');
 
+.night {
+  .second-roof {
+    filter: brightness(0.75);
+  }
+}
+
 .second-roof {
   position: relative;
   width: 1000px;
+  transition: filter 0.5s;
   .second-roof__part-top {
     display: flex;
     height: 200px;

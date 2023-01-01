@@ -15,7 +15,8 @@
 .night {
   .door {
     .door__part-top {
-      background: radial-gradient(circle, rgba(255,255,0,1) 0%, rgba(212,175,55,1) 100%);
+      background: rgba(255, 255, 0, 1);
+      box-shadow: inset 0px 0px 50px rgba(212, 175, 55, 1);
     }
   }
 }
@@ -35,6 +36,7 @@
     height: 100%;
     border: 15px solid #ffffff;
     box-shadow: inset 0px 0px 5px lightgrey;
+    transition: 0.5s;
     &:before {
       content: '';
       position: absolute;

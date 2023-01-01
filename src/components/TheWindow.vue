@@ -35,7 +35,8 @@ const isOpenedRightSide = ref(props.isOpenedRightSideDefault);
 
 .night {
   .window {
-    background: radial-gradient(circle, rgba(255, 255, 0, 1) 0%, rgba(212, 175, 55, 1) 100%);
+    background: rgba(255, 255, 0, 1);
+    box-shadow: inset 0px 0px 50px rgba(212, 175, 55, 1);
   }
 }
 
@@ -50,6 +51,7 @@ const isOpenedRightSide = ref(props.isOpenedRightSideDefault);
   z-index: 1;
   box-shadow: inset 0px 0px 5px lightgray;
   overflow: hidden;
+  transition: 0.5s;
 
   // hided line between sides
   &:after {

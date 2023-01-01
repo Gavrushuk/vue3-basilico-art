@@ -16,6 +16,12 @@
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
 
+.night {
+  .main-roof {
+    filter: brightness(0.75);
+  }
+}
+
 .main-roof {
   background-color: #ba5625;
   position: relative;
@@ -26,6 +32,7 @@
   margin: 0 auto;
   border-bottom: 0;
   margin-bottom: 25px;
+  transition: filter 0.5s;
   &>div {
     flex: 1;
     &>div {

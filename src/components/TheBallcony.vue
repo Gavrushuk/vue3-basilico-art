@@ -35,10 +35,17 @@
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
 
+.night {
+  .ballcony {
+    filter: brightness(0.75);
+  }
+}
+
 .ballcony {
   position: relative;
   width: 1100px;
-  margin-top: -199px;
+  margin-top: -200px;
+  transition: filter 0.5s;
   .ballcony__side-left,
   .ballcony__side-right,
   .ballcony__center {

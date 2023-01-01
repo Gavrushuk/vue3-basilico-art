@@ -11,18 +11,27 @@ defineProps<{
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/variables.scss";
+
+.night {
+  .side-stones {
+    filter: brightness(0.75);
+  }
+}
+
 .side-stones {
   display: flex;
   flex-direction: column;
   gap: 2px;
   width: 60px;
   overflow: hidden;
+  transition: filter 0.5s;
   &.left,
   &.right {
     div {
       background-color: #f2ddd6;
       height: 100px;
-      border: 2px solid #000000;
+      border: 2px solid $stone-border;
     }
   }
   &.left {

@@ -9,6 +9,9 @@ import TheBallcony from './TheBallcony.vue';
 import MainRoof from './MainRoof.vue';
 import SideStones from './SideStones.vue';
 import SidePillar from './SidePillar.vue';
+import HorizontalPillar from './HorizontalPillar.vue';
+import TheStairs from './TheStairs.vue';
+import ConcreteSlab from './ConcreteSlab.vue';
 </script>
 
 <template>
@@ -17,6 +20,8 @@ import SidePillar from './SidePillar.vue';
   </div>
 
   <div class="building-wrapper">
+    <HorizontalPillar />
+
     <div class="sides-stones">
       <SideStones side="left" />
       <SideStones side="right" />
@@ -27,11 +32,13 @@ import SidePillar from './SidePillar.vue';
       <SidePillar />
     </div>
 
+    <div class="horisontal-line first"></div>
+
     <div class="windows-row">
       <WindowWrapper type="square-top-part">
         <TheWindow
           :isOpenedLeftSideDefault="true"
-          :isOpenedRightSideDefault="false"
+          :isOpenedRightSideDefault="true"
         />
       </WindowWrapper>
 
@@ -44,17 +51,19 @@ import SidePillar from './SidePillar.vue';
 
       <WindowWrapper type="square-top-part">
         <TheWindow
-          :isOpenedLeftSideDefault="true"
+          :isOpenedLeftSideDefault="false"
           :isOpenedRightSideDefault="false"
         />
       </WindowWrapper>
     </div>
 
+    <div class="horisontal-line"></div>
+
     <div class="windows-and-dor-row">
       <WindowWrapper type="rounded-top-part">
         <TheWindow
-          :isOpenedLeftSideDefault="true"
-          :isOpenedRightSideDefault="false"
+          :isOpenedLeftSideDefault="false"
+          :isOpenedRightSideDefault="true"
         />
       </WindowWrapper>
 
@@ -68,7 +77,7 @@ import SidePillar from './SidePillar.vue';
       <WindowWrapper type="rounded-top-part">
         <TheWindow
           :isOpenedLeftSideDefault="true"
-          :isOpenedRightSideDefault="false"
+          :isOpenedRightSideDefault="true"
         />
       </WindowWrapper>
     </div>
@@ -77,25 +86,27 @@ import SidePillar from './SidePillar.vue';
       <TheBallcony />
     </div>
 
+    <HorizontalPillar class="pillar-above-windows-second-row" />
+
     <div class="windows-second-row">
       <WindowWrapper type="without-top-part">
         <TheWindow
           :isOpenedLeftSideDefault="true"
+          :isOpenedRightSideDefault="true"
+        />
+      </WindowWrapper>
+
+      <WindowWrapper type="without-top-part">
+        <TheWindow
+          :isOpenedLeftSideDefault="false"
           :isOpenedRightSideDefault="false"
         />
       </WindowWrapper>
 
       <WindowWrapper type="without-top-part">
         <TheWindow
-          :isOpenedLeftSideDefault="true"
-          :isOpenedRightSideDefault="false"
-        />
-      </WindowWrapper>
-
-      <WindowWrapper type="without-top-part">
-        <TheWindow
-          :isOpenedLeftSideDefault="true"
-          :isOpenedRightSideDefault="false"
+          :isOpenedLeftSideDefault="false"
+          :isOpenedRightSideDefault="true"
         />
       </WindowWrapper>
     </div>
@@ -107,38 +118,66 @@ import SidePillar from './SidePillar.vue';
     <div class="double-windows-and-dor-row">
       <div class="double-window">
         <TheWindow
-          :isOpenedLeftSideDefault="true"
+          :isOpenedLeftSideDefault="false"
           :isOpenedRightSideDefault="false"
         />
         <TheWindow
-          :isOpenedLeftSideDefault="true"
+          :isOpenedLeftSideDefault="false"
           :isOpenedRightSideDefault="false"
         />
       </div>
 
       <CentralDoor />
+      
+      <TheStairs />
     </div>
+  </div>
+
+  <div class="concrete-slab-wrapper">
+    <ConcreteSlab />
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
 
+.night {
+  .building-wrapper {
+    &:before {
+      filter: brightness(0.75);
+    }
+  }
+  .horisontal-line,
+  .concrete-slab-wrapper {
+    filter: brightness(0.75);
+  }
+}
+
 .building-wrapper {
   position: relative;
-  background-color: $house-bg;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
   width: 1400px;
   margin: 0 auto;
-  .sides-stones {
+  &:before {
+    content: '';
+    background-color: $house-bg;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    transition: filter 0.5s;
+    z-index: 0;
+  }
+  .sides-stones {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
     .side-stones {
       position: absolute;
       top: 0;
@@ -158,6 +197,7 @@ import SidePillar from './SidePillar.vue';
     left: 0;
     right: 0;
     overflow: hidden;
+    z-index: 1;
     .side-pillar {
       position: absolute;
       top: 0;
@@ -171,45 +211,71 @@ import SidePillar from './SidePillar.vue';
     }
   }
   .windows-row {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 60px;
     margin-top: 150px;
+    z-index: 2;
+  }
+  .pillar-above-windows-second-row {
+    width: 880px;
+    margin-top: 100px;
+  }
+  .horisontal-line {
+    position: relative;
+    background-color: #ffffff;
+    width: 880px;
+    height: 25px;
+    border-top: 2px solid $stone-border;
+    border-bottom: 2px solid $stone-border;
+    margin-top: 160px;
+    transition: filter 0.5s;
+    &.first {
+      margin-top: 100px;
+    }
   }
   .windows-second-row {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 80px;
-    margin-top: 200px;
+    margin-top: 60px;
+    z-index: 2;
   }
   .windows-and-dor-row {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: start;
     gap: 80px;
-    margin-top: 200px;
-    z-index: 0;
+    margin-top: -24px;
+    z-index: 2;
   }
   .ballcony-wrapper {
+    position: relative;
     display: flex;
     justify-content: center;
-    z-index: 1;
+    z-index: 2;
   }
   .second-roof-wrapper {
+    position: relative;
     display: flex;
     justify-content: center;
     margin-top: 200px;
     margin-bottom: -35px;
-    z-index: 1;
+    z-index: 3;
   }
   .double-windows-and-dor-row {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: start;
     gap: 167px;
-    z-index: 0;
+    z-index: 2;
+    padding-bottom: 120px;
     .double-window {
       position: relative;
       display: flex;
@@ -233,5 +299,12 @@ import SidePillar from './SidePillar.vue';
       }
     }
   }
+}
+
+.concrete-slab-wrapper {
+  background-color: #374154;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
 }
 </style>

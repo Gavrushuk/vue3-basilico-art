@@ -17,9 +17,14 @@
 
 .night {
   .door-wrapper {
+    .door-wrapper__part-top,
+    .door-wrapper__part-bottom {
+      filter: brightness(0.75);
+    }
     .door-wrapper__part-top {
       .door-wrapper__part-top__glass {
         background-color: rgba(212,175,55,0.7);
+        transition: 0.5s;
       }
     }
   }
@@ -54,6 +59,7 @@
       height: 30px;
       border-radius: 50% 50% 0 0 / 100% 100% 0 0;
       background-color: $windows-bg;
+      transition: 0.5s;
       &:before {
         content: "";
         position: absolute;
