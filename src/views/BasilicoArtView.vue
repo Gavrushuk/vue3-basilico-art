@@ -28,6 +28,7 @@ const dayTimeState: Ref<'sun' | 'moon'> = ref('sun');
   position: relative;
   background-color: #82addb;
   min-height: 100vh;
+  min-width: 1450px;
   padding-top: 50px;
   transition: 0.5s;
   &.night {
