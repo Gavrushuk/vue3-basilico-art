@@ -5,8 +5,8 @@
 <template>
   <div class="italy-flag">
     <div class="flag-line">
-      <div class="flag-line__horisontal"></div>
-      <div class="flag-line__horisontal"></div>
+      <div class="flag-line__vertical"></div>
+      <div class="flag-line__vertical"></div>
     </div>
     <div class="flag">
       <div class="flag__top"></div>
@@ -51,7 +51,7 @@
     &:before {
       left: 0;
     }
-    .flag-line__horisontal {
+    .flag-line__vertical {
       background-color: #000000;
       position: absolute;
       bottom: -20px;

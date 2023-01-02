@@ -13,6 +13,7 @@ import HorizontalPillar from './HorizontalPillar.vue';
 import TheStairs from './TheStairs.vue';
 import ConcreteSlab from './ConcreteSlab.vue';
 import ItalyFlag from './ItalyFlag.vue';
+import BuildingLabel from './BuildingLabel.vue';
 </script>
 
 <template>
@@ -57,6 +58,8 @@ import ItalyFlag from './ItalyFlag.vue';
         />
       </WindowWrapper>
     </div>
+
+    <BuildingLabel />
 
     <div class="horisontal-line"></div>
 
@@ -233,7 +236,7 @@ import ItalyFlag from './ItalyFlag.vue';
     height: 25px;
     border-top: 2px solid $stone-border;
     border-bottom: 2px solid $stone-border;
-    margin-top: 160px;
+    margin-top: 50px;
     transition: filter 0.5s;
     &.first {
       margin-top: 100px;
