@@ -20,11 +20,13 @@
 .side-pillar {
   width: 110px;
   overflow: hidden;
-  border: 1px solid $stone-border;
   transition: filter 0.5s;
+  box-shadow: 0 0 5px #381a11;
   div {
     background-color: #ffffff;
     border: 1px solid $stone-border;
+    border-left: none;
+    border-right: none;
     height: 20px;
     &:first-child {
       position: relative;
