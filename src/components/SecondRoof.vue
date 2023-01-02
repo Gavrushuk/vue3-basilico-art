@@ -54,6 +54,7 @@
     color: #ffffff;
     margin-top: 13px;
     border: 1px solid #ffffff;
+    box-shadow: 0 5px 15px -7px black;
   }
 }
 </style>

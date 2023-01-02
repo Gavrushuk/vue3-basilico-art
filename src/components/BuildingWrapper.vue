@@ -14,6 +14,7 @@ import TheStairs from './TheStairs.vue';
 import ConcreteSlab from './ConcreteSlab.vue';
 import ItalyFlag from './ItalyFlag.vue';
 import BuildingLabel from './BuildingLabel.vue';
+import TheTable from './TheTable.vue';
 </script>
 
 <template>
@@ -139,6 +140,8 @@ import BuildingLabel from './BuildingLabel.vue';
     </div>
   </div>
 
+  <TheTable />
+
   <div class="concrete-slab-wrapper">
     <ConcreteSlab />
   </div>
@@ -157,6 +160,11 @@ import BuildingLabel from './BuildingLabel.vue';
   .concrete-slab-wrapper {
     filter: brightness(0.75);
   }
+}
+
+.roof-wrapper {
+  position: relative;
+  z-index: 2;
 }
 
 .building-wrapper {

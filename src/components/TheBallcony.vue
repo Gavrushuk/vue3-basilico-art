@@ -124,6 +124,7 @@
   .ballcony__floor {
     width: 100%;
     margin-top: -55px;
+    box-shadow: 0 5px 15px -7px black;
     .ballcony__floor__top {
       background-color: #415e69;
       height: 50px;
