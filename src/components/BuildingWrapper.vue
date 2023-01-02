@@ -12,6 +12,7 @@ import SidePillar from './SidePillar.vue';
 import HorizontalPillar from './HorizontalPillar.vue';
 import TheStairs from './TheStairs.vue';
 import ConcreteSlab from './ConcreteSlab.vue';
+import ItalyFlag from './ItalyFlag.vue';
 </script>
 
 <template>
@@ -110,6 +111,8 @@ import ConcreteSlab from './ConcreteSlab.vue';
         />
       </WindowWrapper>
     </div>
+
+    <ItalyFlag />
 
     <div class="second-roof-wrapper">
       <SecondRoof />
@@ -264,7 +267,7 @@ import ConcreteSlab from './ConcreteSlab.vue';
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: 20px;
     margin-bottom: -35px;
     z-index: 3;
   }
