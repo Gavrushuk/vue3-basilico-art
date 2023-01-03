@@ -15,6 +15,7 @@ import ConcreteSlab from './ConcreteSlab.vue';
 import ItalyFlag from './ItalyFlag.vue';
 import BuildingLabel from './BuildingLabel.vue';
 import TheTable from './TheTable.vue';
+import TheChair from './TheChair.vue';
 </script>
 
 <template>
@@ -86,7 +87,7 @@ import TheTable from './TheTable.vue';
         />
       </WindowWrapper>
     </div>
-
+    
     <div class="ballcony-wrapper">
       <TheBallcony />
     </div>
@@ -140,7 +141,13 @@ import TheTable from './TheTable.vue';
     </div>
   </div>
 
-  <TheTable />
+  <div class="chair-and-table-wrapper">
+    <div>
+      <TheChair chairBack="left" />
+      <TheTable />
+      <TheChair chairBack="right" />
+    </div>
+  </div>
 
   <div class="concrete-slab-wrapper">
     <ConcreteSlab />
@@ -157,6 +164,7 @@ import TheTable from './TheTable.vue';
     }
   }
   .horisontal-line,
+  .chair-and-table-wrapper,
   .concrete-slab-wrapper {
     filter: brightness(0.75);
   }
@@ -310,6 +318,29 @@ import TheTable from './TheTable.vue';
           right: 0;
           left: calc(50% - 10px);
         }
+      }
+    }
+  }
+}
+
+.chair-and-table-wrapper {
+  position: relative;
+  height: 0;
+  width: 1100px;
+  margin: 0 auto;
+  z-index: 2;
+  transition: filter 0.5s;
+  &>div {
+    position: absolute;
+    left: 230px;
+    bottom: -50px;
+    display: flex;
+    align-items: flex-end;
+    .chair-wrapper {
+      margin-left: -30px;
+      &:first-of-type {
+        margin-left: 0;
+        margin-right: -30px;
       }
     }
   }

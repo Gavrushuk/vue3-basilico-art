@@ -17,13 +17,16 @@
 
 <style lang="scss" scoped>
 .table-wrapper {
+  position: relative;
   .table {
-    width: 200px;
+    position: relative;
+    width: 150px;
+    z-index: 1;
     margin: 0 auto;
     .table-top-part {
       background-color: #57291a;
       height: 30px;
-      width: 170px;
+      width: 128px;
       transform: perspective(50px) rotateX(30deg);
       border: 1px solid #32170f;
       margin: 0 auto;
@@ -35,20 +38,23 @@
     }
   }
   .table-legs {
-    width: 150px;
-    height: 200px;
+    width: 250px;
+    height: 150px;
     margin: 0 auto;
     display: flex;
+    margin-top: -12px;
     .table-leg {
       position: relative;
       height: 100%;
       width: 50%;
       border-radius: 50%;
       &:first-child {
-        border-right: 5px solid #32170f;
+        border-right: 7.5px solid #32170f;
+        transform: translateX(3.75px);
       }
       &:last-child {
-        border-left: 5px solid #32170f;
+        border-left: 7.5px solid #32170f;
+        transform: translateX(-3.75px);
       }
     }
   }
