@@ -18,7 +18,7 @@
 }
 
 .side-pillar {
-  width: 110px;
+  width: 82px;
   overflow: hidden;
   transition: filter 0.5s;
   box-shadow: 0 0 5px #381a11;

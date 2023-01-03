@@ -80,7 +80,7 @@
           background-color: #000000;
           position: absolute;
           height: 4px;
-          left: 0;
+          left: -1px;
           width: 50%;
           transform: skewY(-30deg);
         }
@@ -89,7 +89,7 @@
           background-color: #000000;
           position: absolute;
           height: 4px;
-          right: 0;
+          right: -1px;
           width: 50%;
           transform: skewY(30deg);
         }
@@ -106,7 +106,7 @@
   .ballcony__side-right {
     position: absolute;
     width: 110px;
-    bottom: 48px;
+    bottom: 47px;
   }
   .ballcony__side-left {
     left: 0;

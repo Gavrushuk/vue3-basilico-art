@@ -11,15 +11,15 @@
 
 <style lang="scss" scoped>
 .concrete-slab {
-  width: 1400px;
+  width: 1328px;
   margin: 0 auto;
   .concrete-slab__top {
     background-color: #828282;
     height: 100px;
-    width: 1235px;
+    width: 1170px;
     transform: perspective(230px) rotateX(33deg);
     margin: 0 auto;
-    margin-top: -12px;
+    margin-top: -13px;
   }
   .concrete-slab__bottom {
     background-color: #515151;

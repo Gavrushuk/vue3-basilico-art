@@ -225,10 +225,10 @@ import TheChair from './TheChair.vue';
       top: 0;
       bottom: 0;
       &:first-child {
-        left: 150px;
+        left: 178px;
       }
       &:last-child {
-        right: 150px;
+        right: 178px;
       }
     }
   }

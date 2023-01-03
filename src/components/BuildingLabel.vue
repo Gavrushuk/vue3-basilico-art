@@ -53,10 +53,10 @@
       border-radius: 50%;
     }
     &:after {
-      right: 0;
+      right: -5px;
     }
     &:before {
-      left: 0;
+      left: -5px;
     }
     .building-label__line-vertical {
       background-color: #000000;

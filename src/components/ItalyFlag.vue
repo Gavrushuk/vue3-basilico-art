@@ -40,16 +40,15 @@
       background-color: #000000;
       position: absolute;
       top: -2.5px;
-      right: 0;
       width: 10px;
       height: 10px;
       border-radius: 50%;
     }
     &:after {
-      right: 0;
+      right: -5px;
     }
     &:before {
-      left: 0;
+      left: -5px;
     }
     .flag-line__vertical {
       background-color: #000000;
