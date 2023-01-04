@@ -33,7 +33,16 @@
   border-bottom: 0;
   margin-bottom: 25px;
   transition: filter 0.5s;
-  box-shadow: 0 5px 15px -7px black;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 27px;
+    right: 27px;
+    bottom: -15px;
+    height: 15px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(0,0,0,0) 100%);
+    transform: perspective(150px) rotateX(-11deg);
+  }
   &>div {
     flex: 1;
     &>div {

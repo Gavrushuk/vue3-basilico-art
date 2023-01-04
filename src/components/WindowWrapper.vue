@@ -73,7 +73,6 @@ defineProps<{
         bottom: 0;
         height: 20px;
         transform: translatey(20px);
-        box-shadow: 0px 5px 10px lightgray;
       }
     }
   }
@@ -185,7 +184,6 @@ defineProps<{
         bottom: 0;
         height: 20px;
         transform: translatey(20px);
-        box-shadow: 0px 5px 10px lightgray;
       }
     }
   }

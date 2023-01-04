@@ -297,7 +297,7 @@ import TheChair from './TheChair.vue';
     align-items: start;
     gap: 167px;
     z-index: 2;
-    padding-bottom: 120px;
+    padding-bottom: 128px;
     .double-window {
       position: relative;
       display: flex;

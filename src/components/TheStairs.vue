@@ -4,9 +4,18 @@
 
 <template>
   <div class="stairs">
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="stair">
+      <div class="stair-back"></div>
+      <div class="stair-front"></div>
+    </div>
+    <div class="stair">
+      <div class="stair-back"></div>
+      <div class="stair-front"></div>
+    </div>
+    <div class="stair">
+      <div class="stair-back"></div>
+      <div class="stair-front"></div>
+    </div>
   </div>
 </template>
 
@@ -19,101 +28,75 @@
 
 .stairs {
   position: absolute;
-  bottom: -6px;
+  bottom: -7px;
   right: -110px;
   transition: filter 0.5s;
-  overflow: hidden;
-  padding-top: 7px;
-  div {
+  .stair {
     position: relative;
-    background-color: #123e1d;
     height: 40px;
     margin-left: auto;
-    border: 1px solid #07190b;
-    border-right: none;
+    .stair-back {
+      position: absolute;
+      background-color: #123e1d;
+      left: 10px;
+      right: -10px;
+      top: -10px;
+      bottom: 7px;
+      border: 1px solid #07190b;
+      border-bottom: none;
+      z-index: -1;
+      &:before {
+        content: "";
+        background-color: #123e1d;
+        position: absolute;
+        top: -1px;
+        left: -6px;
+        right: 4px;
+        height: 9px;
+        transform: skewX(-45deg);
+        border: 1px solid #07190b;
+        border-bottom: none;
+      }
+      &:after {
+        content: "";
+        background-color: #123e1d;
+        position: absolute;
+        bottom: -7px;
+        left: -5px;
+        right: 4px;
+        height: 7px;
+        transform: skewX(-55deg);
+        border: 1px solid #07190b;
+        border-top: none;
+        border-bottom: none;
+      }
+    }
+    .stair-front {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: #123e1d;
+      border: 1px solid #07190b;
+    }
     &:nth-child(1) {
       width: 144px;
       margin-right: 120px;
-      &:before {
-        content: "";
-        background-color: #123e1d;
-        position: absolute;
-        top: -7.5px;
-        left: 3.5px;
-        right: -4.5px;
-        height: 5px;
-        border: 1px solid #07190b;
-        border-bottom: none;
-        transform: skewX(-60deg);
-        z-index: 1;
-      }
-      &:after {
-        content: "";
-        background-color: #123e1d;
-        position: absolute;
-        top: -7.5px;
-        right: -10px;
-        width: 10px;
-        height: 45px;
-        border: 1px solid #07190b;
-        border-top: none;
-      }
+      z-index: 3;
     }
     &:nth-child(2) {
       background-color: #1a5729;
-      width: 264px;
-      margin-right: 60px;
-      &:before {
-        content: "";
-        background-color: #1a5729;
-        position: absolute;
-        top: -8.5px;
-        left: 4.5px;
-        right: -4.5px;
-        height: 5px;
-        border: 1px solid #07190b;
-        transform: skewX(-60deg);
-        z-index: 1;
-      }
-      &:after {
-        content: "";
-        background-color: #1a5729;
-        position: absolute;
-        top: -8.5px;
-        right: -11px;
-        width: 10px;
-        height: 46px;
-        border: 1px solid #07190b;
-        border-top: none;
-      }
+      width: 244px;
+      margin-right: 70px;
+      margin-top: 2.5px;
+      z-index: 2;
     }
     &:nth-child(3) {
-      width: 384px;
-      margin-right: 7px;
-      &:before {
-        content: "";
-        background-color: #123e1d;
-        position: absolute;
-        top: -8.5px;
-        left: 4.5px;
-        right: -4px;
-        height: 5px;
-        border: 1px solid #07190b;
-        transform: skewX(-60deg);
-        z-index: 1;
-      }
-      &:after {
-        content: "";
-        background-color: #123e1d;
-        position: absolute;
-        top: -5.5px;
-        right: -7px;
-        width: 6px;
-        height: 40px;
-        border: 1px solid #07190b;
-        border-top: none;
-        transform: skewY(-40deg);
-      }
+      width: 344px;
+      margin-top: 2.5px;
+      margin-right: 20px;
+      z-index: 1;
     }
   }
 }
