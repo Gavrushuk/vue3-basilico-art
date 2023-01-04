@@ -173,6 +173,8 @@ import TheChair from './TheChair.vue';
 .roof-wrapper {
   position: relative;
   z-index: 2;
+  overflow: hidden;
+  padding-bottom: 20px;
 }
 
 .building-wrapper {
@@ -182,6 +184,7 @@ import TheChair from './TheChair.vue';
   align-items: center;
   width: 1400px;
   margin: 0 auto;
+  margin-top: -20px;
   &:before {
     content: '';
     background-color: $house-bg;
