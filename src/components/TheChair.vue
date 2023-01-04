@@ -25,15 +25,15 @@ defineProps<{
   position: relative;
   .chair-back {
     position: absolute;
-    top: -110px;
+    top: -122px;
     background-color: #57291a;
     width: 20px;
-    height: 125px;
+    height: 140px;
     border: 5px solid #32170f;
     border-radius: 50%;
     transform: skew(10deg, 10deg) perspective(30px) rotateY(50deg);
     &.left {
-      left: -16px;
+      left: -18px;
       transform: skew(10deg, 10deg) perspective(30px) rotateY(50deg);
       &+.chair-bottom {
         .chair-seat {
@@ -42,7 +42,7 @@ defineProps<{
       }
     }
     &.right {
-      right: -16px;
+      right: -18px;
       transform: skew(-10deg, -10deg) perspective(30px) rotateY(-50deg);
       &+.chair-bottom {
         .chair-seat {
@@ -53,8 +53,8 @@ defineProps<{
   }
   .chair-bottom {
     position: relative;
-    width: 70px;
-    height: 118px;
+    width: 90px;
+    height: 140px;
     .chair-armrests {
       position: relative;
       &:before,
@@ -64,7 +64,7 @@ defineProps<{
         bottom: -30px;
         left: 0;
         right: 0;
-        height: 60px;
+        height: 65px;
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
         border: 3px solid #32170f;
@@ -84,7 +84,7 @@ defineProps<{
     .chair-legs {
       position: relative;
       width: 100%;
-      height: 110px;
+      height: 130px;
       border: 5px solid #32170f;
       border-top-width: 8px;
       border-bottom: none;
@@ -111,7 +111,7 @@ defineProps<{
         bottom: 0;
         left: -3px;
         right: -3px;
-        height: 75px;
+        height: 85px;
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
         border: 3px solid #32170f;

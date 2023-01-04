@@ -20,26 +20,26 @@
   position: relative;
   .table {
     position: relative;
-    width: 150px;
+    width: 200px;
     z-index: 1;
     margin: 0 auto;
     .table-top-part {
       background-color: #57291a;
-      height: 30px;
-      width: 128px;
+      height: 36px;
+      width: 164px;
       transform: perspective(50px) rotateX(30deg);
-      border: 1px solid #32170f;
       margin: 0 auto;
     }
     .table-bottom-part {
       background-color: #32170f;
-      height: 5px;
+      height: 8px;
       width: 100%;
+      margin-top: 1px;
     }
   }
   .table-legs {
     width: 250px;
-    height: 150px;
+    height: 175px;
     margin: 0 auto;
     display: flex;
     margin-top: -12px;

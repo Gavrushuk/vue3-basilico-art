@@ -332,15 +332,15 @@ import TheChair from './TheChair.vue';
   transition: filter 0.5s;
   &>div {
     position: absolute;
-    left: 230px;
+    left: 188px;
     bottom: -50px;
     display: flex;
     align-items: flex-end;
     .chair-wrapper {
-      margin-left: -30px;
+      margin-left: -10px;
       &:first-of-type {
         margin-left: 0;
-        margin-right: -30px;
+        margin-right: -10px;
       }
     }
   }
