@@ -1,4 +1,4 @@
-# Art created with Vue 3 framework, without any images, only HTML elements and CSS styles
+# Art created with Vue 3 framework, without any images, only HTML and CSS
 
 ## I was inspired street art in Lviv, Ukraine🇺🇦
 
