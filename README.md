@@ -1,6 +1,4 @@
-# vue3-basilico-art
-
-## Art with Vue 3 framework (HTML, CSS, JS), without images
+# Art created with Vue 3 framework, without any images, only HTML elements and CSS styles
 
 ## I was inspired street art in Lviv, Ukraine🇺🇦
 
